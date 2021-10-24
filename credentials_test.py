@@ -13,4 +13,11 @@ class TestCredentials (unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_credentials = Credentials("Bree","b1234","brendaandeso4@gmail.com")
-        
+    
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+        self.assertEqual(self.new_credentials.user_name,"Bree")
+        self.assertEqual(self.new_credentials.password,"b1234")
+        self.assertEqual(self.new_credentials.email,"brendaandeso4@gmail.com")
