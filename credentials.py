@@ -32,3 +32,11 @@ class Credentials:
         save_multiple_credentials method saves multiple credentials objects into credential_list
         '''
         Credentials.credential_list.append(self)
+    
+    def delete_credentials(self):
+
+        '''
+        delete_credentials method deletes a saved credential from the credential_list
+        '''
+
+        Credentials.credential_list.remove(self)
