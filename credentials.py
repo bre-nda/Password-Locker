@@ -10,8 +10,10 @@ def __init__(self,user_name,password,email):
         __init__ method that helps us define properties for our objects.
 
         Args:
-            first_name: New contact first name.
-            last_name : New contact last name.
-            number: New contact phone number.
-            email : New contact email address.
+            user_name : New credential user_name.
+            password: New credential password.
+            email : New credentials email address.
         '''
+        self.user_name = user_name
+        self.password = password
+        self.email = email
