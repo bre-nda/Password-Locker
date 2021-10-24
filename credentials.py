@@ -26,3 +26,9 @@ class Credentials:
         '''
 
         Credentials.credential_list.append(self)
+    
+    def save_multiple_credentials(self):
+        '''
+        save_multiple_credentials method saves multiple credentials objects into credential_list
+        '''
+        Credentials.credential_list.append(self)
