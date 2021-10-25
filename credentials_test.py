@@ -1,5 +1,6 @@
 import unittest
 from credentials import Credentials
+import pyperclip
 
 class TestCredentials(unittest.TestCase):
 
@@ -89,6 +90,16 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.assertEqual(Credentials.display_credentials(),Credentials.credential_list)
+
+    def test_copy_email(self):
+        '''
+        Test to confirm that we are copying the email address from a found credentials
+        '''
+
+        self.new_credentials.save_credentials()
+        Credentials.copy_email("bree")
+
+        self.assertEqual(self.new_credentials.email,pyperclip.paste())
 
 
 
