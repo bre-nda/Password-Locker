@@ -70,6 +70,24 @@ def main():
    print(f"Hello {user_name}. Choose an option below?")
    print('\n')
 
+   while True:
+    print("cc - create a new account, dc - display various accounts, fc -find an account, ex -exit the  list ")
+
+    short_code = input().lower()
+
+    if short_code == 'cc':
+        print("New User")
+        print("-"*10)
+
+        print ("full name ....")
+        full_name = input()
+
+        print("username ...")
+        user_number = input()
+
+        print("email...")
+        email = input()
+
 
 
 
