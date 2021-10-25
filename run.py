@@ -52,6 +52,20 @@ def find_user(user_name):
     '''
     return Credentials.find_by_user_name(user_name)
 
+def check_existing_credentials(user_name):
+    '''
+    Function that check if a credentials exists with that username and return a Boolean
+    '''
+    return Credentials.credentials_exist(user_name)
+
+def check_existing_users(user_name):
+    '''
+    Function that check if a user exists with that user_name and return a Boolean
+    '''
+    return User.user_exist(user_name)
+
+
+
 def display_credentials():
     '''
     Function that returns all the saved credentials
@@ -87,6 +101,35 @@ def main():
 
         print("email...")
         email = input()
+
+        save_user(create_user(full_name,user_name,email))
+        print ('\n')
+        print(f"New User {full_name} created")
+        print ('\n')
+
+    elif short_code == 'dc':
+        if display_credentials():
+            print("Here is a list of all your login credentials")
+        print('\n')
+
+        for contact in display_credentials():
+            print(f"{Credentials.user_name} {Credentials.password} .....")
+
+            print('\n')
+        else:
+            print('\n')
+            print("You dont seem to have any accounts saved yet")
+            print('\n')
+
+    elif short_code == 'fc':
+        print("Enter the account credentials you want to search for")
+        search_user_name = input()
+        if check_existing_credentials(search_user_name):
+            search_credentials = find_credentials(search_user_name)
+            print(f"{search_credentials.user_name} {search_credentials.password}")
+            
+
+
 
 
 
