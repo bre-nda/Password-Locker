@@ -85,26 +85,26 @@ def main():
    print('\n')
 
    while True:
-    print("cc - create a new account, dc - display various accounts, fc -find an account, ex -exit the  list ")
+    print("cc - create a new account, dc - display various accounts, fc -find an account, del -delete credentials, ex -exit the  list ")
 
     short_code = input().lower()
 
     if short_code == 'cc':
-        print("New User")
+        print("New Credentials")
         print("-"*10)
 
-        print ("full name ....")
-        full_name = input()
-
         print("username ...")
-        user_number = input()
+        user_name = input()
+
+        print("password")
+        password = input()
 
         print("email...")
         email = input()
 
-        save_user(create_user(full_name,user_name,email))
+        save_credentials(create_credentials(user_name,password,email))
         print ('\n')
-        print(f"New User {full_name} created")
+        print(f"New User {user_name} {password} {email} created")
         print ('\n')
 
     elif short_code == 'dc':
@@ -112,8 +112,8 @@ def main():
             print("Here is a list of all your login credentials")
         print('\n')
 
-        for contact in display_credentials():
-            print(f"{Credentials.user_name} {Credentials.password} .....")
+        for Credentials in display_credentials():
+            print(f"{Credentials.user_name} {Credentials.password} {Credentials.email}.....")
 
             print('\n')
         else:
@@ -134,12 +134,21 @@ def main():
         else:
             print("That user does not exist")
 
+    elif short_code == 'del':
+        if del_credentials(create_credentials):
+            print("choose credentials to delete")
+            print('/n')
+            for Credentials in del_credentials():
+                print("delete credential")
+
+        else:
+            print('/n')
+            print("cannot delete credentials")
+            print('/n')
+
     elif short_code == "ex":
         print("Bye .......")
         break
-
-
-
 
 
 
