@@ -127,7 +127,16 @@ def main():
         if check_existing_credentials(search_user_name):
             search_credentials = find_credentials(search_user_name)
             print(f"{search_credentials.user_name} {search_credentials.password}")
-            
+            print('-' * 20)
+
+            print(f"user_name.......{search_credentials.user_name}")
+            print(f"email.......{search_credentials.email}")
+        else:
+            print("That user does not exist")
+
+    elif short_code == "ex":
+        print("Bye .......")
+        break
 
 
 
